@@ -1,6 +1,11 @@
 export interface Payload {
   name: string,
-  value: string | boolean | number | Country[]
+  value: string | boolean | number
+}
+
+export interface ActionCountries {
+  type: string,
+  payload: Country[]
 }
 
 export interface Action {

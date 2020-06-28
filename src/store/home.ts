@@ -13,6 +13,7 @@ export const CHANGE_HOME = 'CHANGE_HOME';
 export const changeHomeAction = createAction(CHANGE_HOME);
 
 export default function reducer(state = initialState, action: Action) {
+  const {type, payload} = action;
   switch (type) {
     case CHANGE_HOME:
       const {name, value} = payload;
