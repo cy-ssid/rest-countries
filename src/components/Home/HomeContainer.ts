@@ -5,15 +5,16 @@ import {
   getError, getLoading, getRegion,
   getSearch, getTheme
 } from "../../store/home";
+import { RootState } from "../../interfaces";
 
-const mapStateToProps = (state: any) => {
+const mapStateToProps = (state: RootState) => {
   return {
     error: getError(state),
     loading: getLoading(state),
     region: getRegion(state),
     search: getSearch(state),
     theme: getTheme(state),
-    countries: getCountries(state),
+    countries: Object.values(getCountries(state)),
   };
 };
 
