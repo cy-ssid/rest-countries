@@ -14,11 +14,13 @@ if (process.env.NODE_ENV === "development") {
 
 const enhancer = composeEnhancers(applyMiddleware(thunk));
 
+export const rootReducer = combineReducers({
+  home: homeReducer,
+  countries: countriesReducer
+});
+
 const store = createStore(
-  combineReducers({
-    home: homeReducer,
-    countries: countriesReducer
-  }),
+  rootReducer,
   enhancer
 );
 

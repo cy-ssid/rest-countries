@@ -1,11 +1,14 @@
 import {createCollectionFromArray} from '../helpers';
-// import createAction from '../helpers/actionHelper';
 import { changeHomeAction } from './home';
 import {
   ENDPOINT,
   ERROR_MESSAGE
 } from '../constants';
-import {ActionCountries, Country} from '../interfaces';
+import {
+  ActionCountries,
+  Country,
+  AppThunk
+} from '../interfaces';
 
 export const initialState = {};
 
@@ -39,9 +42,9 @@ const hideLoaderAndClearError = (dispatch: any) => {
   dispatch(changeHomeAction({ name: "error", value: '' }));
 };
 
-export const fetchCountries = () => {
-  return (dispatch: any) => {
-    hideLoaderAndClearError(dispatch);
+export const fetchCountries = (): AppThunk => {
+  return dispatch => {
+    dispatch(changeHomeAction({ name: "isLoading", value: true }));
     fetch(ENDPOINT)
     .then(response => {
       if (response.ok) {

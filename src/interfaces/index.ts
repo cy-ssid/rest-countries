@@ -1,3 +1,7 @@
+import { Action } from 'redux';
+import { ThunkAction } from 'redux-thunk';
+import { rootReducer } from '../store'
+
 export interface Payload {
   name: string,
   value: string | boolean | number
@@ -8,7 +12,7 @@ export interface ActionCountries {
   payload: Country[]
 }
 
-export interface Action {
+export interface AppAction {
   type: string,
   payload: Payload
 }
@@ -40,3 +44,12 @@ export interface Country {
     borders: string[],
     nativeName: string,
 }
+
+export type RootState = ReturnType<typeof rootReducer>
+
+export type AppThunk<ReturnType = void> = ThunkAction<
+  ReturnType,
+  RootState,
+  unknown,
+  Action<string>
+>
