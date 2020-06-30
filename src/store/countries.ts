@@ -7,7 +7,8 @@ import {
 import {
   ActionCountries,
   Country,
-  AppThunk
+  AppThunk,
+  RootState
 } from '../interfaces';
 
 export const initialState = {};
@@ -60,3 +61,5 @@ export const fetchCountries = (): AppThunk => {
     .catch(error => onError(dispatch, error));
   };
 };
+
+export const getCountries = (state: RootState) => state.countries;

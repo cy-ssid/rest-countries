@@ -1,5 +1,8 @@
 import createAction from '../helpers/actionHelper';
-import {AppAction} from '../interfaces';
+import {
+  AppAction,
+  RootState
+} from '../interfaces';
 
 export const initialState = {
   isLoading: false,
@@ -26,9 +29,9 @@ export default function reducer(state = initialState, action: AppAction) {
   }
 }
 
-export const getLoading = (state: typeof initialState) => state.isLoading;
-export const getError = (state: typeof initialState) => state.error;
-export const getRegion = (state: typeof initialState) => state.region;
-export const getSearch = (state: typeof initialState) => state.search;
-export const getTheme = (state: typeof initialState) => state.isDark;
+export const getLoading = (state: RootState) => state.home.isLoading;
+export const getError = (state: RootState) => state.home.error;
+export const getRegion = (state: RootState) => state.home.region;
+export const getSearch = (state: RootState) => state.home.search;
+export const getTheme = (state: RootState) => state.home.isDark;
 
