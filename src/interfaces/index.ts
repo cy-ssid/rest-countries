@@ -32,7 +32,7 @@ export interface Language {
 
 export interface Country {
     alpha3Code: string,
-    flat: string,
+    flag: string,
     currencies: Currency[],
     languages: Language[],
     name: string,

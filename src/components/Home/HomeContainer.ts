@@ -14,7 +14,7 @@ const mapStateToProps = (state: RootState) => {
     region: getRegion(state),
     search: getSearch(state),
     theme: getTheme(state),
-    countries: Object.values(getCountries(state)),
+    countries: getCountries(state),
   };
 };
 

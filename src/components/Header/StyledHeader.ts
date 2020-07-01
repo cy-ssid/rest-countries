@@ -1,12 +1,9 @@
 import styled from 'styled-components';
-import { maxCenter } from '../Styled';
+import { maxCenter, themeCardBGText } from '../Styled';
 
 const StyledHeader = styled.header`
-  color: ${({theme}) => theme['text']};
-  background: ${({theme}) => theme['cardBG']};
+  ${themeCardBGText}
   padding: 1em 0;
-  box-shadow: 0px 1px 5px rgba(0, 0, 0, .5);
-  transition: 0.2s;
 
   .header__container {
     display: flex;
@@ -24,12 +21,10 @@ const StyledHeader = styled.header`
   }
 
   .header__button {
-    background: none;
+    ${themeCardBGText}
     border: none;
-    color: ${({theme}) => theme['text']};
     font-size: 1rem;
     outline: none;
-    transition: 0.5s;
     cursor: pointer;
 
     &:active, &:hover {

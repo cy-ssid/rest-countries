@@ -62,4 +62,12 @@ export const fetchCountries = (): AppThunk => {
   };
 };
 
-export const getCountries = (state: RootState) => state.countries;
+export const getCountries = (state: RootState) => {
+  const countries = Object.values(state.countries);
+  if (countries.length === 0) {
+    return [];
+  }
+  return countries
+.filter((country: any) => !state.home.search || country.name.toLowerCase().includes(state.home.search.toLowerCase()))
+.filter((country: any) => !state.home.region || country.region === state.home.region);
+};
