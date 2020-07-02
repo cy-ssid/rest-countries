@@ -5,18 +5,19 @@ import {
   Global,
   Container } from './components/Styled';
 import Theme from './components/Theme';
-import Header from './components/Header/HeaderContainer';
+import HeaderCountainer from './components/Header/HeaderContainer';
+import CountryContainer from './components/Country/CountryContainer';
 
 function App() {
   return (
     <Router>
       <Global />
       <Theme>
-        <Header />
+        <HeaderCountainer />
         <Container>
           <Switch>
             <Route path="/" component={HomeContainer} exact />
-            {/* <Route path="country/:alpha3Code" component={HomeContainer} exact /> */}
+            <Route path="/country/:alpha3Code" component={CountryContainer} exact />
           </Switch>
         </Container>
       </Theme>

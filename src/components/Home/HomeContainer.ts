@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import Home from "./Home";
-import { fetchCountries, getCountries } from "../../store/countries";
+import { fetchCountries, getFilteredCountries } from "../../store/countries";
 import {
   getError, getLoading, getRegion,
   getSearch, getTheme
@@ -14,7 +14,7 @@ const mapStateToProps = (state: RootState) => {
     region: getRegion(state),
     search: getSearch(state),
     theme: getTheme(state),
-    countries: getCountries(state),
+    countries: getFilteredCountries(state),
   };
 };
 

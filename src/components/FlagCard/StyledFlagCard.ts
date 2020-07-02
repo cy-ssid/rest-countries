@@ -16,6 +16,7 @@ const StyledFlagCard = styled.div`
 
   .home__countryHeading {
     font-weight: 800;
+    margin-top: 0;
   }
 
   .country__info {

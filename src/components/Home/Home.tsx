@@ -14,7 +14,9 @@ type HomeProps = {
 
 export default class Home extends React.Component<HomeProps> {
   componentDidMount() {
-    this.props.fetchCountries();
+    if (this.props.countries.length === 0) {
+      this.props.fetchCountries();
+    }
   }
 
   render() {
